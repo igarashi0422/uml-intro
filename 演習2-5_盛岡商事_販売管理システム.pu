@@ -1,0 +1,23 @@
+@startuml 2-5
+'left to right direction
+
+actor 販売部員 as salesperson
+actor 管理者 as manager
+
+rectangle 販売管理システム {
+  salesperson --> (注文商品確認)
+  salesperson --> (商品出荷登録)
+  
+  (注文商品確認) --> (商品情報閲覧)
+  (商品出荷登録) --> (在庫管理)
+  
+  manager --> (販売履歴確認)
+  manager --> (在庫情報確認)
+}
+
+rectangle 外部システム {
+  (商品情報閲覧) <-- 外部システム : <<uses>>
+  (在庫管理) <-- 外部システム : <<uses>>
+}
+
+@enduml

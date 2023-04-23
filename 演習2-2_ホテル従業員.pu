@@ -1,0 +1,14 @@
+@startuml 2-2
+ ' left to right direction
+actor 経営者
+actor ホテル従業員
+rectangle ホテル業務 {
+usecase チェックイン
+usecase チェックアウト
+usecase 部屋清掃
+}
+  経営者 --|> ホテル従業員
+  ホテル従業員 --> チェックイン
+  ホテル従業員 --> チェックアウト
+  ホテル従業員 --> 部屋清掃
+@enduml

@@ -1,0 +1,58 @@
+@startuml 演習３－７
+
+object "顧客" as customer1 {
+  氏名 = "高橋洋平"
+}
+
+object "商品1" as product1 {
+  商品名 = "テレビ"
+  型式 = "V12345"
+}
+
+object "商品2" as product2 {
+  商品名 = "冷蔵庫"
+  型式 = "R8765"
+}
+
+object "注文1" as order1 {
+  注文日 = "11月21日"
+  数量 = 2
+}
+
+object "注文2" as order2 {
+  注文日 = "11月21日"
+  数量 = 1
+}
+
+object "顧客２" as customer2 {
+  氏名 = "高田利恵"
+}
+
+object "注文3" as order3 {
+  注文日 = "12月23日"
+  数量 = 1
+}
+
+object "大坪直之" as customer3 {
+  氏名 = "大坪直之"
+  住所 = "千葉県柏市"
+}
+
+object "商品3" as product3 {
+  商品名 = "プロジェクタ"
+  型式 = "P1122"
+}
+
+order1 -- product1
+order1 -- product2
+customer1 -- order1
+
+order2 -- product2
+customer1 -- order2
+
+order3 -- product2
+customer2 -- order3
+
+product3 "注文なし"-- customer3
+
+@enduml

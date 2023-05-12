@@ -35,7 +35,6 @@ object "注文3" as order3 {
 
 object "大坪直之" as customer3 {
   氏名 = "大坪直之"
-  住所 = "千葉県柏市"
 }
 
 object "商品3" as product3 {

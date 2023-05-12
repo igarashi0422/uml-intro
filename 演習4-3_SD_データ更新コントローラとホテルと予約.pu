@@ -1,0 +1,10 @@
+@startuml 演習4-3
+participant "データ更新コントローラクラス" as Controller
+participant "ホテルクラス" as Hotel
+participant "予約クラス" as Reservation
+
+Controller -> Hotel: 予約操作を呼び出す
+Hotel -> Reservation: 予約オブジェクトを作成する
+Hotel -> Hotel: 予約登録操作を呼び出す
+
+@enduml

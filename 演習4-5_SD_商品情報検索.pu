@@ -1,0 +1,29 @@
+@startuml 演習4-5
+skinparam participantPadding 20
+
+actor 会員
+participant 商品検索画面
+participant 商品検索コントローラ
+participant 商品
+participant 商品カテゴリ
+
+会員 -> 商品検索画面 : 商品検索(商品番号)
+activate 商品検索画面
+商品検索コントローラ --> 商品
+商品検索画面 -> 商品検索コントローラ : 商品検索(商品番号)
+loop 商品カテゴリ数
+  商品検索コントローラ --> 商品カテゴリ : 生成
+  activate 商品カテゴリ
+  商品検索コントローラ -> 商品 : 商品カテゴリ設定
+  activate 商品
+  deactivate 商品
+  deactivate 商品カテゴリ
+end
+activate 商品検索コントローラ
+商品検索コントローラ --> 商品検索画面 : 商品情報
+商品検索画面 -> 商品検索画面 : 商品情報表示
+activate 商品検索画面
+deactivate 商品検索コントローラ
+deactivate 商品検索画面
+@enduml
+

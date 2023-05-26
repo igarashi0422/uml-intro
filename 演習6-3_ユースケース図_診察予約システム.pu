@@ -1,0 +1,15 @@
+@startuml 演習6-3
+
+left to right direction
+actor User as User
+actor Nurse as Nurse
+
+rectangle "診察予約システム" {
+  User --> (メニュー画面)
+  User --> (予約と確認画面)
+  User --> (あなたの順番画面)
+  User --> (今の順番画面)
+  Nurse --> (今の順番画面) : 診察終了
+}
+
+@enduml

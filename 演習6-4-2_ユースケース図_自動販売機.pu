@@ -1,0 +1,13 @@
+@startuml 6-4
+left to right direction
+
+actor 客 as Customer
+actor ベンダー as Vendor
+
+rectangle 自動販売機 {
+  Customer --> (お金を入れる)
+  Customer --> (ボタンを押す)
+  Vendor --> (料金を回収する)
+}
+
+@enduml

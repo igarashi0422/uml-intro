@@ -1,0 +1,24 @@
+@startuml 6-4
+actor 客
+participant 自動販売機
+participant 料金装置
+participant ボタン
+participant ベンダー装置
+
+activate 客
+客 -> 自動販売機: お金を入れる()
+activate 自動販売機
+自動販売機 -> 料金装置: お金を受け取る()
+activate 料金装置
+自動販売機 -> ボタン: ボタンを押す()
+activate ボタン
+自動販売機 -> ベンダー装置: ドリンクを出す()
+activate ベンダー装置
+ベンダー装置 -->  客 :ドリンク  
+deactivate ベンダー装置
+deactivate ボタン
+deactivate 料金装置
+
+deactivate 自動販売機
+deactivate 客
+@enduml

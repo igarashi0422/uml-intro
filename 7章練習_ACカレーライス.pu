@@ -1,0 +1,18 @@
+@startuml カレーライス
+title カレーライス作成
+start
+:具材を切る;
+fork
+:鍋で具材を炒める;
+fork
+:鍋に水を入れる;
+end fork
+:鍋にルーを入れる;
+fork again
+:お米をとぐ; 
+:お米を炊く;
+end fork
+:盛り付けをする;
+stop
+@enduml
+@enduml

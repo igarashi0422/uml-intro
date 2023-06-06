@@ -1,0 +1,13 @@
+@startuml
+
+start
+:ユーザ名を入力する;
+:パスワードを入力する;
+if (認証が成功したか？) then (yes)
+  :予約を行う;
+else (no)
+  :ユーザ名を再入力する;
+  :パスワードを再入力する;
+endif
+stop
+@enduml

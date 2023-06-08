@@ -1,0 +1,91 @@
+@startuml 7-4
+ class 注文 {
+  合計
+}
+
+class 注文詳細 {
+  数量
+  小計
+}
+
+class 割引クーポン {
+    値引き額
+    期限
+}
+
+class 商品 {
+  名称
+  単価
+}
+
+class カップ {
+    サイズ
+}
+
+class ドリンク {
+    種別
+}
+
+class フード {
+}
+
+class レシピ {
+}
+
+class 材料 {
+}
+
+class ハンバーガー {
+    種別
+}
+
+class ポテト {
+    サイズ
+}
+
+class パン{
+
+}
+
+class 肉{
+}
+
+class 野菜{
+}
+
+class チーズ{
+}
+注文 "1..*" o-right- 注文詳細
+注文詳細 "0..*" -right- "  o..1" 割引クーポン
+注文詳細 "0.." -down- "1" 商品
+ ドリンク "1..3" -left- "0..*" カップ
+ドリンク -|> 商品
+ フード -up-|> 商品
+フード "1 1" -right- レシピ
+ハンバーガー -up-|> フード
+ ポテト  -up-|> フード
+ハンバーガー "1..*" o-left- "1..*" 材料
+パン -up-|> 材料
+肉 -up-|> 材料
+チーズ -up-|> 材料
+野菜 -up-|> 材料
+hide empty methods
+hide empty field
+hide  注文 circle
+hide  注文詳細 circle
+hide  割引クーポン circle
+hide  商品 circle
+hide  カップ circle
+hide  ドリンク circle
+hide  フード circle
+hide  レシピ circle
+hide  材料 circle
+hide  ハンバーガー circle
+hide  ポテト  circle
+hide パン circle
+hide 肉 circle
+hide 野菜 circle
+hide チーズ circle
+
+
+@enduml
